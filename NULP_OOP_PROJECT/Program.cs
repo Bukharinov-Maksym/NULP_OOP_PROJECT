@@ -1,11 +1,5 @@
 ﻿using Models;
 using Serilog;
-using Serilog.Events;
-using System;
-using System.Reflection.PortableExecutable;
-using System.Runtime.Serialization.Json;
-using System.Xml.Serialization;
-using System.Text.Json;
 using Serilog.Sinks.SystemConsole.Themes;
 
 namespace OOPProject
