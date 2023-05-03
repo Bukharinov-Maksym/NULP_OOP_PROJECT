@@ -1,0 +1,11 @@
+Horse data
+name: HORSE_NAME1, birth year: 2005 breed: HORSE_BREED1, color: WHITE
+Donkey data
+name: DONKEY_NAME1, birth year: 2015, type: DONKEY_TYPE1, height: 1,1
+Horse data
+name: HORSE_NAME2, birth year: 2008 breed: HORSE_BREED2, color: WHITE
+Donkey data
+name: DONKEY_NAME2, birth year: 2000, type: DONKEY_TYPE2, height: 0,9
+
+White horses count: 2
+Donkeys shorter than 1.5 meters count: 2

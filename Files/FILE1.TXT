@@ -1,0 +1,12 @@
+Donkey data
+name: DONKEY_NAME2, birth year: 2000, type: DONKEY_TYPE2, height: 0,9
+Horse data
+name: HORSE_NAME3, birth year: 2001 breed: HORSE_BREED3, color: HORSE_COLOR3
+Horse data
+name: HORSE_NAME1, birth year: 2005 breed: HORSE_BREED1, color: WHITE
+Horse data
+name: HORSE_NAME2, birth year: 2008 breed: HORSE_BREED2, color: WHITE
+Donkey data
+name: DONKEY_NAME1, birth year: 2015, type: DONKEY_TYPE1, height: 1,1
+Donkey data
+name: DONKEY_NAME2, birth year: 2020, type: DONKEY_TYPE2, height: 1,6
