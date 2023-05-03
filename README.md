@@ -10,6 +10,6 @@ List of additional requirements:
 + Sustained Clean Code Principle
 + Completed Unit tests
 + Connected ReSharper extension and fixed the errors it points to
-+ Implemented exception handling with their logging to a file using one of the loggers (by your choise)
++ Implemented exceptions handling with their logging to a file using one of the loggers (by your choice)
 + Implemented serialization and deserialization of data in json/xml
 ```
