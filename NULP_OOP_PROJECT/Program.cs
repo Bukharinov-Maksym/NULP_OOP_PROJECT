@@ -8,11 +8,12 @@ namespace OOPProject
     {
         public static void Main(string[] args)
         {
-            const string filesDirectory = "C:\\Users\\Sonnenaufgang\\source\\repos\\NULP_OOP_PROJECT\\Files";
-            const string loggerPath = "C:\\Users\\Sonnenaufgang\\source\\repos\\NULP_OOP_PROJECT\\Logs";
-            const string dataPath = filesDirectory + "\\data.txt";
-            const string firstOutputPath = filesDirectory + "\\FILE1.TXT";
-            const string secondOutputPath = filesDirectory + "\\FILE2.TXT";
+            var path = Directory.GetCurrentDirectory();
+            var filesDirectory = Directory.GetCurrentDirectory() + "\\Files";
+            var loggerPath = Directory.GetCurrentDirectory() + "\\Logs";
+            var dataPath = filesDirectory + "\\data.txt";
+            var firstOutputPath = filesDirectory + "\\FILE1.TXT";
+            var secondOutputPath = filesDirectory + "\\FILE2.TXT";
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
@@ -24,8 +25,9 @@ namespace OOPProject
             {
                 Log.Information("Program started");
 
-                var countLines = File.ReadAllLines(dataPath);
-                var animals = new Animal[countLines.Length];
+                TasksMethods.FilesDirectoryEnsureCreated(filesDirectory);
+                TasksMethods.DataFileEnsureCreated(dataPath);
+                var animals = new Animal[File.ReadLines(dataPath).Count()];
 
                 TasksMethods.ReadFromFile(animals, dataPath);
                 SerializationMethods.JsonSerialize(filesDirectory + "\\animals.json", animals);
@@ -43,6 +45,7 @@ namespace OOPProject
                 Log.Information("Program completed");
                 Log.CloseAndFlush();
             }
+            Console.Read();
         }
     }
 }

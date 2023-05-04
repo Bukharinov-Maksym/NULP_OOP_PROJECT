@@ -91,5 +91,21 @@ namespace OOPProject
             }
             Log.Debug($"Second task performed successfully, output file path: {secondOutputPath}");
         }
+        // CHECK IF DATA.TXT EXISTS, IF NO - CREATE A SAMPLE
+        public static void DataFileEnsureCreated(string path)
+        {
+            if (File.Exists(path)) return;
+            using var fs = File.Create(path);
+            var infoHorse = new UTF8Encoding(true).GetBytes("Horse HORSE_NAME1 2005 WHITE HORSE_BREED1\n");
+            fs.Write(infoHorse, 0, infoHorse.Length);
+            var infoDonkey = new UTF8Encoding(true).GetBytes("Donkey DONKEY_NAME1 2015 DONKEY_TYPE1 1,1");
+            fs.Write(infoDonkey,0, infoDonkey.Length);
+        }
+        // CHECK IF FILES DIRECTORY EXISTS, IF NO - CREATE
+        public static void FilesDirectoryEnsureCreated(string path)
+        {
+            if (Directory.Exists(path)) return;
+            Directory.CreateDirectory(path);
+        }
     }
 }
