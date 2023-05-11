@@ -8,7 +8,6 @@ namespace OOPProject
     {
         public static void Main(string[] args)
         {
-            var path = Directory.GetCurrentDirectory();
             var filesDirectory = Directory.GetCurrentDirectory() + "\\Files";
             var loggerPath = Directory.GetCurrentDirectory() + "\\Logs";
             var dataPath = filesDirectory + "\\data.txt";

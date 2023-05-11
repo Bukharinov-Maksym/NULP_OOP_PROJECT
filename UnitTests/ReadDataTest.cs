@@ -6,9 +6,9 @@ namespace UnitTests
         [TestMethod]
         public void ReadDataMethodTest()
         {
-            var countLines = File.ReadAllLines("C:\\Users\\Sonnenaufgang\\source\\repos\\NULP_OOP_PROJECT\\Files\\data.txt");
-            var animals = new Animal[countLines.Length];
-            TasksMethods.ReadFromFile(animals, "C:\\Users\\Sonnenaufgang\\source\\repos\\NULP_OOP_PROJECT\\Files\\data.txt");
+            var path = Directory.GetCurrentDirectory() + "\\ReadDataTest.txt";
+            var animals = new Animal[File.ReadLines(path).Count()];
+            TasksMethods.ReadFromFile(animals, path);
             var actualName = animals[0].Name;
             const string expectedName = "HORSE_NAME1";
             Assert.AreEqual(expectedName, actualName);

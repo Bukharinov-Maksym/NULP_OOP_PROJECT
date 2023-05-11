@@ -96,10 +96,16 @@ namespace OOPProject
         {
             if (File.Exists(path)) return;
             using var fs = File.Create(path);
-            var infoHorse = new UTF8Encoding(true).GetBytes("Horse HORSE_NAME1 2005 WHITE HORSE_BREED1\n");
-            fs.Write(infoHorse, 0, infoHorse.Length);
-            var infoDonkey = new UTF8Encoding(true).GetBytes("Donkey DONKEY_NAME1 2015 DONKEY_TYPE1 1,1");
-            fs.Write(infoDonkey,0, infoDonkey.Length);
+            var info = new UTF8Encoding(true).GetBytes("Horse HORSE_NAME1 2005 WHITE HORSE_BREED1\n");
+            fs.Write(info, 0, info.Length);
+            info = new UTF8Encoding(true).GetBytes("Donkey DONKEY_NAME1 2015 DONKEY_TYPE1 1,1\n");
+            fs.Write(info,0, info.Length);
+            info = new UTF8Encoding(true).GetBytes("Donkey DONKEY_NAME2 2020 DONKEY_TYPE2 1,6\n");
+            fs.Write(info, 0, info.Length);
+            info = new UTF8Encoding(true).GetBytes("Horse HORSE_NAME3 2001 HORSE_COLOR3 HORSE_BREED3\n");
+            fs.Write(info, 0, info.Length);
+            info = new UTF8Encoding(true).GetBytes("Donkey DONKEY_NAME2 2000 DONKEY_TYPE2 0,9");
+            fs.Write(info, 0, info.Length);
         }
         // CHECK IF FILES DIRECTORY EXISTS, IF NO - CREATE
         public static void FilesDirectoryEnsureCreated(string path)

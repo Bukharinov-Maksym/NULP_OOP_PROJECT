@@ -9,7 +9,7 @@ namespace OOPProject
         // Json Serialization
         public static void JsonSerialize(string path, Animal[] animals)
         {
-            var serializer = new Newtonsoft.Json.JsonSerializer();
+            var serializer = new JsonSerializer();
             serializer.Converters.Add(new Newtonsoft.Json.Converters.JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;
             serializer.TypeNameHandling = TypeNameHandling.Auto;
@@ -27,11 +27,11 @@ namespace OOPProject
             if (animals == null) throw new ArgumentNullException(nameof(animals));
 #pragma warning disable CS8600
 #pragma warning disable IDE0059
-            animals = JsonConvert.DeserializeObject<Animal[]>(File.ReadAllText(path), new Newtonsoft.Json.JsonSerializerSettings
+            animals = JsonConvert.DeserializeObject<Animal[]>(File.ReadAllText(path), new JsonSerializerSettings
 #pragma warning restore IDE0059
             {
-                TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto,
-                NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+                TypeNameHandling = TypeNameHandling.Auto,
+                NullValueHandling = NullValueHandling.Ignore,
             });
 #pragma warning restore CS8600
             Log.Debug("Array deserialized from a .json successfully");
